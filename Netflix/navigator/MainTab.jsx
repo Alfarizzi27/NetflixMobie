@@ -1,4 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { BlurView } from "expo-blur";
 import News from "../pages/News";
 import {
   Entypo,
@@ -12,6 +13,7 @@ export default function MainTab() {
   const Tab = createBottomTabNavigator();
 
   return (
+    // <BlurView intensity={80} tint="dark">
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: { position: "absolute", backgroundColor: "white" },
@@ -52,5 +54,6 @@ export default function MainTab() {
         }}
       />
     </Tab.Navigator>
+    // </BlurView>
   );
 }

@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { useEffect, useState } from "react";
+import { CardStyleInterpolators } from "@react-navigation/stack";
+import { HeaderStyleInterpolators } from "@react-navigation/stack";
 import Home from "../pages/Home";
 import Detail from "../pages/Detail";
 
@@ -20,9 +21,13 @@ export default function MainStack() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Detail Page"
+        name="Detail"
         component={Detail}
-        options={{ gestureDirection: "vertical" }}
+        options={{
+          title: "Detail",
+          headerStyleInterpolator: HeaderStyleInterpolators.forUIKit,
+          headerShown: false,
+        }}
       />
     </Stack.Navigator>
   );
