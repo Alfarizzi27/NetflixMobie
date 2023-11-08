@@ -1,19 +1,41 @@
-import { StyleSheet, Text, SafeAreaView } from "react-native";
+import * as React from "react";
+import { StyleSheet, Text, SafeAreaView, View } from "react-native";
+import { Video, ResizeMode } from "expo-av";
+import YouTube from "react-native-youtube";
 
 export default function Detail() {
+  const video = React.useRef(null);
+  const [status, setStatus] = React.useState({});
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>Hello Detail</Text>
+    <SafeAreaView>
+      <View>
+        <YouTube
+          videoId="ir7i-QpMOHQ"
+          style={{ alignSelf: "stretch", height: 300 }}
+        />
+        {/* <Video
+          ref={video}
+          style={styles.video}
+          source={{
+            uri: "www.youtube.com/embed/ir7i-QpMOHQ",
+          }}
+          useNativeControls
+          resizeMode={ResizeMode.CONTAIN}
+          isLooping
+          shouldPlay
+        /> */}
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    backgroundColor: "black",
   },
-  text: {
-    fontSize: 25,
-    fontWeight: "500",
+  video: {
+    alignSelf: "center",
+    width: 320,
+    height: 200,
   },
 });
