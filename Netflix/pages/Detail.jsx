@@ -9,21 +9,24 @@ export default function Detail() {
   return (
     <SafeAreaView>
       <View>
-        <YouTube
+        {/* <YouTube
           videoId="ir7i-QpMOHQ"
+          play
+          fullscreen
+          loop
           style={{ alignSelf: "stretch", height: 300 }}
-        />
-        {/* <Video
+        /> */}
+        <Video
           ref={video}
           style={styles.video}
           source={{
-            uri: "www.youtube.com/embed/ir7i-QpMOHQ",
+            uri: "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
           }}
           useNativeControls
           resizeMode={ResizeMode.CONTAIN}
           isLooping
           shouldPlay
-        /> */}
+        />
       </View>
     </SafeAreaView>
   );
