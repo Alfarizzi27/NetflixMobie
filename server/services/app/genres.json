@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Aksi"
+  },
+  {
+    "id": 2,
+    "name": "Petualangan"
+  },
+  {
+    "id": 3,
+    "name": "Komedi"
+  },
+  {
+    "id": 4,
+    "name": "Drama"
+  },
+  {
+    "id": 5,
+    "name": "Horor"
+  },
+  {
+    "id": 6,
+    "name": "Fiksi Ilmiah"
+  },
+  {
+    "id": 7,
+    "name": "Fantasi"
+  },
+  {
+    "id": 8,
+    "name": "Romantis"
+  },
+  {
+    "id": 9,
+    "name": "Misteri"
+  },
+  {
+    "id": 10,
+    "name": "Musikal"
+  }
+]

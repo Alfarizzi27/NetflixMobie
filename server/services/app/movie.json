@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "The Shawshank Redemption",
+    "slug": "the-shawshank-redemption",
+    "synopsis": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "trailerUrl": "https://www.youtube.com/watch?v=6hB3S9bIaco",
+    "imgUrl": "https://m.media-amazon.com/images/I/61-vQDr7ecL._AC_UF1000,1000_QL80_.jpg",
+    "rating": 9.3,
+    "genreId": 1,
+    "authorId": 1
+  },
+  {
+    "id": 2,
+    "title": "The Godfather",
+    "slug": "the-godfather",
+    "synopsis": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+    "trailerUrl": "https://www.youtube.com/watch?v=sY1S34973zA",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
+    "rating": 9.2,
+    "genreId": 1,
+    "authorId": 1
+  },
+  {
+    "id": 3,
+    "title": "Inception",
+    "slug": "inception",
+    "synopsis": "A thief who enters the dreams of others to steal their secrets experiences a mind-bending heist that will change his life forever.",
+    "trailerUrl": "https://www.youtube.com/watch?v=66TuSJo4dZM",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
+    "rating": 8.8,
+    "genreId": 2,
+    "authorId": 1
+  },
+  {
+    "id": 4,
+    "title": "Pulp Fiction",
+    "slug": "pulp-fiction",
+    "synopsis": "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+    "trailerUrl": "https://www.youtube.com/watch?v=s7EdQ4FqbhY",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+    "rating": 8.9,
+    "genreId": 3,
+    "authorId": 2
+  },
+  {
+    "id": 5,
+    "title": "The Dark Knight",
+    "slug": "the-dark-knight",
+    "synopsis": "When the Joker wreaks havoc on Gotham City, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+    "trailerUrl": "https://www.youtube.com/watch?v=EXeTwQWrcwY",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
+    "rating": 9.0,
+    "genreId": 3,
+    "authorId": 2
+  },
+  {
+    "id": 6,
+    "title": "Forrest Gump",
+    "slug": "forrest-gump",
+    "synopsis": "The presidencies of Kennedy and Johnson, the Vietnam War, and the Watergate scandal shape the life of a simple man with a low IQ.",
+    "trailerUrl": "https://www.youtube.com/watch?v=uPIEn0M8su0",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+    "rating": 8.8,
+    "genreId": 4,
+    "authorId": 1
+  },
+  {
+    "id": 7,
+    "title": "Gladiator",
+    "slug": "gladiator",
+    "synopsis": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
+    "trailerUrl": "https://www.youtube.com/watch?v=ol67qo3WhJk",
+    "imgUrl": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p24674_p_v8_ae.jpg",
+    "rating": 8.5,
+    "genreId": 5,
+    "authorId": 2
+  },
+  {
+    "id": 8,
+    "title": "The Matrix",
+    "slug": "the-matrix",
+    "synopsis": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+    "trailerUrl": "https://www.youtube.com/watch?v=m8e-FF8MsqU",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+    "rating": 8.7,
+    "genreId": 2,
+    "authorId": 2
+  },
+  {
+    "id": 9,
+    "title": "Schindler's List",
+    "slug": "schindlers-list",
+    "synopsis": "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+    "trailerUrl": "https://www.youtube.com/watch?v=gG22XNhtnoY",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+    "rating": 8.9,
+    "genreId": 6,
+    "authorId": 1
+  },
+  {
+    "id": 10,
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "slug": "the-lord-of-the-rings-the-fellowship-of-the-ring",
+    "synopsis": "A young hobbit, Frodo Baggins, embarks on a perilous journey to destroy a powerful ring and save Middle-earth from the Dark Lord Sauron.",
+    "trailerUrl": "https://www.youtube.com/watch?v=V75dMMIW2B4",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg",
+    "rating": 8.8,
+    "genreId": 7,
+    "authorId": 2
+  }
+]
