@@ -99,10 +99,9 @@ class UserController {
     static async createMovie(req, res, next) {
         const t = await sequelize.transaction();
         try {
-            const { title, synopsis, trailerUrl, rating, genreId, imgUrl, cast } = req.body
+            const { title, synopsis, trailerUrl, rating, genreId, imgUrl, cast, authorId } = req.body
 
-            const authorId = req.user.id
-
+            // const authorId = req.user.id
 
             const movies = await Movie.create({ title, synopsis, trailerUrl, rating, genreId, authorId, imgUrl }, { transaction: t })
 
@@ -110,11 +109,12 @@ class UserController {
             //     return JSON.parse(el)
             // })
 
-            let datasCast = cast.map(el => {
+            const datasCast = cast.map(el => {
                 el.movieId = movies.id
                 el.createdAt = el.updatedAt = new Date()
                 return el
             })
+
 
             const createCast = await Casts.bulkCreate(datasCast, { transaction: t })
 
@@ -140,9 +140,9 @@ class UserController {
     static async updateMovie(req, res, next) {
         try {
             const id = +req.params.id
-            const { title, synopsis, trailerUrl, rating, genreId, imgUrl } = req.body
-            const authorId = req.user.id
-            const datas = await Movie.update({ title, synopsis, trailerUrl, rating, genreId, authorId, imgUrl },
+            const { title, synopsis, trailerUrl, rating, genreId, imgUrl, authorId } = req.body
+            const slug = title.split(" ").join("-")
+            const datas = await Movie.update({ title, synopsis, trailerUrl, rating, genreId, authorId, imgUrl, slug },
                 {
                     where: { id },
                     // individualHooks: true,

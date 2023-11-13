@@ -8,7 +8,7 @@
     "imgUrl": "https://m.media-amazon.com/images/I/61-vQDr7ecL._AC_UF1000,1000_QL80_.jpg",
     "rating": 9.3,
     "genreId": 1,
-    "authorId": 1
+    "authorId": "654cde73ac1374272694396f"
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
     "rating": 9.2,
     "genreId": 1,
-    "authorId": 1
+    "authorId": "654cde73ac1374272694396f"
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
     "rating": 8.8,
     "genreId": 2,
-    "authorId": 1
+    "authorId": "654cde73ac1374272694396f"
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
     "rating": 8.9,
     "genreId": 3,
-    "authorId": 2
+    "authorId": "654cde73ac13742726943970"
   },
   {
     "id": 5,
@@ -52,7 +52,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
     "rating": 9.0,
     "genreId": 3,
-    "authorId": 2
+    "authorId": "654cde73ac13742726943970"
   },
   {
     "id": 6,
@@ -63,7 +63,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
     "rating": 8.8,
     "genreId": 4,
-    "authorId": 1
+    "authorId": "654cde73ac1374272694396f"
   },
   {
     "id": 7,
@@ -74,7 +74,7 @@
     "imgUrl": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p24674_p_v8_ae.jpg",
     "rating": 8.5,
     "genreId": 5,
-    "authorId": 2
+    "authorId": "654cde73ac13742726943970"
   },
   {
     "id": 8,
@@ -85,7 +85,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
     "rating": 8.7,
     "genreId": 2,
-    "authorId": 2
+    "authorId": "654cde73ac13742726943970"
   },
   {
     "id": 9,
@@ -96,7 +96,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
     "rating": 8.9,
     "genreId": 6,
-    "authorId": 1
+    "authorId": "654cde73ac1374272694396f"
   },
   {
     "id": 10,
@@ -107,6 +107,6 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg",
     "rating": 8.8,
     "genreId": 7,
-    "authorId": 2
+    "authorId": "654cde73ac13742726943970"
   }
 ]
