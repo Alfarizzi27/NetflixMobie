@@ -14,16 +14,31 @@ import { BlurView } from "expo-blur";
 import Card from "../components/Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { gql, useQuery } from "@apollo/client";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
+
+const GET_MOVIES = gql`
+  query Query {
+    movies {
+      id
+      title
+      slug
+      rating
+      imgUrl
+    }
+  }
+`;
+
 export default function Home() {
-  const [data, setData] = useState([]);
+  let { loading, error, data } = useQuery(GET_MOVIES);
+  const [datas, setDatas] = useState([]);
 
   const fetchDatas = async () => {
     try {
       const { data } = await axios.get("https://api.jikan.moe/v4/anime");
-      setData(data.data);
+      setDatas(data.data);
     } catch (error) {
       console.log(error);
     }
@@ -31,6 +46,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchDatas();
+    console.log(data);
   }, []);
 
   return (
@@ -44,12 +60,18 @@ export default function Home() {
         </View>
         <ScrollView>
           <View style={{ marginTop: 100, paddingLeft: 5, paddingRight: 5 }}>
-            <View style={{ flexDirection: "row", justifyContent: "center" }}>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "center",
+                backgroundColor: "transparent",
+              }}
+            >
               <View style={styles.shadowContainer}>
                 <View style={styles.cardContainer}>
                   <Image
                     source={{
-                      uri: "https://media.21cineplex.com/webcontent/gallery/pictures/169683621225139_405x594.jpg",
+                      uri: "https://cdns.klimg.com/kapanlagi.com/p/budipekerti.jpg",
                     }}
                     style={{
                       width: "auto",
@@ -66,24 +88,25 @@ export default function Home() {
               Released in the past year
             </Text>
             <FlatList
-              data={data}
+              data={data?.movies || []}
               renderItem={({ item, index }) => <Card key={index} item={item} />}
               horizontal={true}
             />
             <Text style={styles.title}>Trending Now</Text>
             <FlatList
-              data={data}
+              data={data?.movies || []}
               renderItem={({ item, index }) => <Card key={index} item={item} />}
               horizontal={true}
             />
             <Text style={styles.title}>Only on Netflix</Text>
             <FlatList
-              data={data}
+              data={data?.movies || []}
               renderItem={({ item, index }) => <Card key={index} item={item} />}
               horizontal={true}
             />
+            <Text style={styles.title}>Recomendation for you</Text>
             <FlatList
-              data={data}
+              data={data?.movies || []}
               renderItem={({ item, index }) => <Card key={index} item={item} />}
               horizontal={true}
               style={{ marginTop: 10 }}
@@ -131,7 +154,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   shadowContainer: {
-    shadowColor: "red",
+    shadowColor: "white",
     shadowOpacity: 0.6,
     shadowRadius: 8,
   },

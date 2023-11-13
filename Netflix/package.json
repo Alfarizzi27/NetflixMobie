@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.7",
     "@expo/vector-icons": "^13.0.0",
     "@react-native-community/blur": "^4.3.2",
     "@react-navigation/bottom-tabs": "^6.5.11",
@@ -20,6 +21,7 @@
     "expo-av": "~13.4.1",
     "expo-blur": "~12.4.1",
     "expo-status-bar": "~1.6.",
+    "graphql": "^15.8.0",
     "native-base": "^3.4.28",
     "nativewind": "^2.0.11",
     "react": "18.2.0",

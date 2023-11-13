@@ -13,12 +13,11 @@ const windowHeight = Dimensions.get("window").height;
 
 export default function Card({ item }) {
   const navigation = useNavigation();
-
   return (
     <Pressable
       onPress={() =>
         navigation.navigate("Detail", {
-          id: item.mal_id,
+          id: item.id,
         })
       }
     >
@@ -31,7 +30,7 @@ export default function Card({ item }) {
       >
         <Image
           source={{
-            uri: item.images.jpg.image_url,
+            uri: item.imgUrl,
           }}
           style={{
             width: styles.screenSize.width / 2.5,
