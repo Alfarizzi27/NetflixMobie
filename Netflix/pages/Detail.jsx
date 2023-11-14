@@ -1,13 +1,23 @@
 import * as React from "react";
-import { StyleSheet, Text, SafeAreaView, View, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  SafeAreaView,
+  View,
+  Dimensions,
+  Image,
+  FlatList,
+  ScrollView,
+} from "react-native";
 import { useEffect, useState, useRef } from "react";
 import { useRoute } from "@react-navigation/native";
 import { gql, useQuery } from "@apollo/client";
 import { Video, ResizeMode } from "expo-av";
-import YouTube from "react-native-youtube";
+import YoutubePlayer from "react-native-youtube-iframe";
 import Body from "../components/Body";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import LottieView from "lottie-react-native";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -20,11 +30,13 @@ const GET_MOVIES_DETAIL = gql`
       slug
       synopsis
       rating
+      trailerUrl
       User {
         username
       }
       Casts {
         name
+        profilePict
       }
       Genre {
         name
@@ -44,6 +56,21 @@ export default function Detail() {
     },
   });
 
+  if (loading) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <LottieView
+          autoPlay
+          style={{
+            width: 200,
+            height: 200,
+          }}
+          source={require("../assets/netflixload.json")}
+        />
+      </View>
+    );
+  }
+
   return (
     <Body>
       <SafeAreaView>
@@ -55,7 +82,7 @@ export default function Detail() {
           loop
           style={{ alignSelf: "stretch", height: 300 }}
         /> */}
-          <Video
+          {/* <Video
             ref={video}
             style={styles.video}
             source={{
@@ -65,6 +92,11 @@ export default function Detail() {
             resizeMode={ResizeMode.COVER}
             isLooping
             shouldPlay
+          /> */}
+          <YoutubePlayer
+            height={220}
+            play={true}
+            videoId={data?.detailMovies.trailerUrl}
           />
         </View>
         <View style={styles.containerContent}>
@@ -92,18 +124,42 @@ export default function Detail() {
               </View>
             </View>
           </View>
-          <Text style={styles.text}>{data?.detailMovies.title}</Text>
-          <View style={styles.genre}>
-            <Text style={styles.textGenre}>
-              {data?.detailMovies.Genre.name}
-            </Text>
-          </View>
-          <Text style={styles.synopsisTitle}>Synopsis</Text>
-          <Text style={styles.synopsis}>{data?.detailMovies.synopsis}</Text>
-          <Text style={[styles.synopsisTitle, { marginTop: 9 }]}>Casts</Text>
-          {data?.detailMovies.Casts.map((el) => (
-            <Text style={styles.synopsis}>{el.name}</Text>
-          ))}
+          <ScrollView>
+            <Text style={styles.text}>{data?.detailMovies.title}</Text>
+            <View style={styles.genre}>
+              <Text style={styles.textGenre}>
+                {data?.detailMovies.Genre.name}
+              </Text>
+            </View>
+            <Text style={styles.synopsisTitle}>Synopsis</Text>
+            <Text style={styles.synopsis}>{data?.detailMovies.synopsis}</Text>
+            <Text style={[styles.synopsisTitle, { marginTop: 9 }]}>Casts</Text>
+            <View style={styles.cast}>
+              {data?.detailMovies.Casts.map((el, index) => (
+                <View
+                  style={{
+                    marginTop: 20,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  key={index}
+                >
+                  <Image
+                    source={{
+                      uri: el.profilePict,
+                    }}
+                    style={{
+                      width: 70,
+                      height: 70,
+                      resizeMode: "cover",
+                      borderRadius: 100,
+                    }}
+                  ></Image>
+                  <Text style={styles.synopsis}>{el.name}</Text>
+                </View>
+              ))}
+            </View>
+          </ScrollView>
         </View>
       </SafeAreaView>
     </Body>
@@ -134,7 +190,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "500",
     color: "white",
-    marginTop: 30,
+    marginTop: 15,
   },
   rating: {
     fontSize: 12,
@@ -159,7 +215,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     flexWrap: "wrap",
-    width: "max-content",
     paddingTop: 7,
     paddingBottom: 7,
     paddingRight: 10,
@@ -182,7 +237,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     width: windowWidth - 30,
     alignItems: "center",
-    marginTop: 5,
     marginBottom: 5,
+  },
+  cast: {
+    display: "flex",
+    flexDirection: "row",
+    gap: 20,
   },
 });

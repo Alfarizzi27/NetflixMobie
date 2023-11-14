@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Movie.hasMany(models.Casts, { foreignKey: 'movieId' })
+      Movie.belongsTo(models.Genre, { foreignKey: 'genreId' })
     }
   }
   Movie.init({
@@ -57,7 +58,15 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    genreId: DataTypes.INTEGER,
+    genreId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "Genres",
+        key: "id"
+      },
+      onDelete: "cascade",
+      onUpdate: "cascade",
+    },
     authorId: DataTypes.INTEGER
   }, {
     sequelize,

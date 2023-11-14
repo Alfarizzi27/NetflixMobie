@@ -15,6 +15,7 @@ import Card from "../components/Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { gql, useQuery } from "@apollo/client";
+import LottieView from "lottie-react-native";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -32,22 +33,35 @@ const GET_MOVIES = gql`
 `;
 
 export default function Home() {
-  let { loading, error, data } = useQuery(GET_MOVIES);
-  const [datas, setDatas] = useState([]);
+  const { loading, error, data } = useQuery(GET_MOVIES);
+  if (loading) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <LottieView
+          autoPlay
+          style={{
+            width: 200,
+            height: 200,
+          }}
+          source={require("../assets/netflixload.json")}
+        />
+      </View>
+    );
+  }
+  // const [datas, setDatas] = useState([]);
 
-  const fetchDatas = async () => {
-    try {
-      const { data } = await axios.get("https://api.jikan.moe/v4/anime");
-      setDatas(data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const fetchDatas = async () => {
+  //   try {
+  //     const { data } = await axios.get("https://api.jikan.moe/v4/anime");
+  //     setDatas(data.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchDatas();
-    console.log(data);
-  }, []);
+  // useEffect(() => {
+  //   fetchDatas();
+  // }, []);
 
   return (
     <>
@@ -71,7 +85,7 @@ export default function Home() {
                 <View style={styles.cardContainer}>
                   <Image
                     source={{
-                      uri: "https://cdns.klimg.com/kapanlagi.com/p/budipekerti.jpg",
+                      uri: "https://m.media-amazon.com/images/M/MV5BNWZhZmMwYWQtOWU1ZC00ODc1LTkzMGEtMTVjMWU5NzBjNDE4XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_FMjpg_UX1000_.jpg",
                     }}
                     style={{
                       width: "auto",
@@ -147,15 +161,15 @@ const styles = StyleSheet.create({
   },
   cardContainer: {
     height: windowHeight - 350,
-    backgroundColor: "white",
     width: windowWidth - 50,
-    marginTop: 40,
     borderRadius: 10,
     overflow: "hidden",
   },
   shadowContainer: {
-    shadowColor: "white",
-    shadowOpacity: 0.6,
-    shadowRadius: 8,
+    marginTop: 40,
+    backgroundColor: "transparent",
+    shadowColor: "grey",
+    shadowOpacity: 0.8,
+    shadowRadius: 15,
   },
 });

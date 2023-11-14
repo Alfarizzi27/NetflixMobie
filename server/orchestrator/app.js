@@ -42,6 +42,13 @@ const typeDefs = `#graphql
     updatedAt: String
   }
 
+  type Genre {
+    id: Int,
+    name: String,
+    createdAt: String,
+    updatedAt: String
+  }
+
   type DetailMovies {
     id:ID
     title: String
@@ -56,12 +63,14 @@ const typeDefs = `#graphql
     updatedAt: String
     Casts: [CastMovie]
     User: User
+    Genre: Genre
   }
 
   type Query {
     users: [User]
     movies: [Movie]
     detailMovies(id:ID!): DetailMovies
+    findUser(_id:ID!):User
   }
 
   type SuccessMessage {
@@ -82,7 +91,6 @@ const typeDefs = `#graphql
     phoneNumber: String
     address: String
     ) : SuccessMessage
-    findUser(_id: String): User
     deleteUser(_id:String): SuccessMessage
     deleteMovie(id:String): SuccessMessage
     createMovie(
@@ -157,7 +165,17 @@ const resolvers = {
             } catch (error) {
                 console.log(error);
             }
-        }
+        },
+        findUser: async (_, args) => {
+            try {
+                const { _id } = args
+                const { data } = await axios.get(USER_SERVICE_URL + "/" + _id)
+                return data
+            } catch (error) {
+                console.log(error);
+                throw (error)
+            }
+        },
     },
     Mutation: {
         createUser: async (_, args) => {
@@ -170,15 +188,6 @@ const resolvers = {
                 return { message: "Success Add New User" }
             } catch (error) {
                 console.log(error);
-            }
-        },
-        findUser: async (_, args) => {
-            try {
-                const { _id } = args
-                const { data } = await axios.get(USER_SERVICE_URL + "/" + _id)
-                return data
-            } catch (error) {
-                throw (error)
             }
         },
         deleteUser: async (_, args) => {
@@ -249,6 +258,7 @@ const resolvers = {
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    introspection: true
 });
 
 

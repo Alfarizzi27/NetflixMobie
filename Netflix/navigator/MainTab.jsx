@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BlurView } from "expo-blur";
 import News from "../pages/News";
+import MenuBlur from "../components/Blur";
 import {
   Entypo,
   MaterialCommunityIcons,
@@ -16,7 +17,10 @@ export default function MainTab() {
     // <BlurView intensity={80} tint="dark">
     <Tab.Navigator
       screenOptions={{
-        tabBarStyle: { position: "absolute", backgroundColor: "white" },
+        tabBarStyle: { position: "absolute" },
+        tabBarBackground: () => <MenuBlur />,
+        tabBarInactiveTintColor: "white",
+        tabBarActiveTintColor: "red",
       }}
     >
       <Tab.Screen

@@ -1,4 +1,4 @@
 const Redis = require('ioredis')
-const redis = new Redis()
+const redis = new Redis("redis://default:1XTpxfGbdgCF5VizhRelMM0SnPNR5tgj@redis-12902.c252.ap-southeast-1-1.ec2.cloud.redislabs.com:12902")
 
 module.exports = redis

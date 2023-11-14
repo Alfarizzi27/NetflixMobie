@@ -1,24 +1,24 @@
 import { BlurView } from "expo-blur";
 import { View } from "react-native";
 
-const MenuBlur = () => {
+export default function MenuBlur() {
   return (
     <View style={{ flex: 1 }}>
       <View
         style={{
           width: "100%",
-          height: 55,
-          borderRadius: 90,
+          height: 100,
           borderTopColor: "white",
           borderBottomColor: "white",
           overflow: "hidden",
+          backgroundColor: "transparent",
         }}
       >
         <BlurView
-          intensity={10}
-          style={{ flex: 1, backgroundColor: " rgba(61, 53, 105, 0.4)" }}
+          intensity={40}
+          style={{ flex: 1, backgroundColor: " rgba(0, 3, 6, 0.5)" }}
         />
       </View>
     </View>
   );
-};
+}

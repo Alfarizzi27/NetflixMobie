@@ -59,6 +59,7 @@ class UserController {
             const movies = await Movie.findAll()
             res.status(200).json(movies)
         } catch (error) {
+            console.log(error);
             next(error)
         }
     }
@@ -67,9 +68,13 @@ class UserController {
         try {
             const id = req.params.id
             const detailMovie = await Movie.findOne({
-                where: { id }, include: [
+                where: { id },
+                include: [
                     {
                         model: Casts
+                    },
+                    {
+                        model: Genre
                     }
                 ]
             })
