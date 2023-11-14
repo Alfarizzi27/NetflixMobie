@@ -4,8 +4,8 @@ const axios = require('axios')
 const redis = require('./config/redisConfig')
 
 
-const APP_SERVICE_URL = "http://localhost:4002";
-const USER_SERVICE_URL = "http://localhost:4001/users";
+const APP_SERVICE_URL = "http://app:4002";
+const USER_SERVICE_URL = "http://user:4001/users";
 
 const typeDefs = `#graphql
 

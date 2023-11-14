@@ -4,9 +4,10 @@ WORKDIR /app
 
 ENV PORT=4002
 
-COPY package*.json
+COPY package*.json .
 
 RUN npm install && npm install -g nodemon
+
 COPY . .
 
-CMD npm start
+CMD node app.js

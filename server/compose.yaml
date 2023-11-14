@@ -7,6 +7,7 @@ services:
       - APP_SERVICE_URL=${APP_SERVICE_URL}
       - USER_SERVICE_URL=${USER_SERVICE_URL}
       - DATABASE_URL=${DATABASE_URL}
+      - PORT=80
   app:
     build: ./services/app
     ports:

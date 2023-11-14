@@ -10,4 +10,4 @@ RUN npm install && npm install -g nodemon
 
 COPY . .
 
-CMD npm run dev
+CMD node app.js
